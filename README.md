@@ -1,4 +1,4 @@
-# Zapp - 
+# Zapp - Powering up digitalization
 
 ## Vision
 
