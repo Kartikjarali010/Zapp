@@ -1,13 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/agoric.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Offer Up</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">ZAP</h1>
+            <button id="connect-wallet" class="connect-wallet">Connect Wallet</button>
+        </header>
+        
+        <main class="chatbot-interface">
+            <div class="chat-history">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <div class="input-area">
+                <input type="text" class="message-input" placeholder="Type your message...">
+                <button id="send-message" class="send-button">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
