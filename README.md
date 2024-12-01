@@ -1,40 +1,125 @@
-# Agoric Dapp Starter: Offer Up
+# **Agoric Asset Chatbot**
 
-Offer Up is a simple Dapp for the [Agoric smart contract platform](https://docs.agoric.com/) that permits users to explore items for sale in a marketplace, displaying default options of maps, potions, and scrolls. Users can select up to three items in any combination, create an offer starting from 0.25 [IST](https://agoric.com/blog/getting-started/ist), and upon transaction confirmation, receive the chosen items in their wallet while the offered amount is deducted from their balance.
+Agoric Asset Chatbot is a decentralized application (Dapp) powered by the **Agoric smart contract platform**. It enables users to interact with a chatbot to seamlessly **buy** or **sell assets** in a decentralized marketplace. The chatbot provides an intuitive interface for asset trading, guiding users through transactions and ensuring secure, blockchain-backed trades.
 
-<div style="display: flex; align-items: center; justify-content: center; height: 300;">
-    <img src="https://docs.agoric.com/assets/new_002_small2.DgAL2zV8.png" alt="Offer Up Dapp" style="display: block; margin: auto;">
-</div>
+![Agoric Asset Chatbot](https://docs.agoric.com/assets/new_002_small2.DgAL2zV8.png)
 
-## Getting started
+---
 
-Detailed instructions regarding setting up the environment with a video walkthrough is available at [Your First Agoric Dapp](https://docs.agoric.com/guides/getting-started/) tutorial. But if you have the environment set, i.e., have correct version of node, yarn, docker, and Keplr wallet installed, below are the steps that you need to follow. *You can also use the same instructions to follow along in Github Codespaces without any installation or downloads on your local machine, apart from Keplr which is needed to connect to dApp.*
-- run the `yarn install` command to install any solution dependencies. *Downloading all the required dependencies may take several minutes. The UI depends on the React framework, and the contract depends on the Agoric framework. The packages in this project also have development dependencies for testing, code formatting, and static analysis.*
-- start a local Agoric blockchain using the `yarn start:docker` command.
-- run `yarn docker:logs` to check the logs. Once your logs resemble the following, stop the logs by pressing `ctrl+c`.
+## **Features**
+- **Chatbot Interface:** Intuitive chatbot for asset trading.
+- **Buy and Sell Assets:** Interact directly with the marketplace to buy or sell items.
+- **Smart Contract-Driven Transactions:** Ensure secure and automated trades.
+- **Decentralized and Transparent:** Built on the Agoric blockchain platform for trustless operations.
+- **IST Support:** Transactions are conducted in [IST](https://agoric.com/blog/getting-started/ist).
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+Before starting, ensure the following tools are installed on your machine:
+- [Node.js (v18.12 or v20.9)](https://nodejs.org/)  
+- [Yarn](https://yarnpkg.com/getting-started/install)  
+- [Docker](https://www.docker.com/)  
+- [Keplr Wallet](https://www.keplr.app/)  
+
+Alternatively, use **GitHub Codespaces** for a cloud-based setup (except for Keplr, which you’ll need to install locally).
+
+---
+
+### **Setup Instructions**
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd agoric-asset-chatbot
+   ```
+
+2. Install dependencies:
+   ```bash
+   yarn install
+   ```
+   > *Note: This may take several minutes as dependencies for both the UI and smart contract are installed.*
+
+3. Start a local Agoric blockchain:
+   ```bash
+   yarn start:docker
+   ```
+
+4. Check the blockchain logs:
+   ```bash
+   yarn docker:logs
+   ```
+   Wait until the logs resemble:
+   ```
+   demo-agd-1  | 2023-12-27T04:08:06.384Z block-manager: block 1003 begin
+   demo-agd-1  | 2023-12-27T04:08:06.386Z block-manager: block 1003 commit
+   demo-agd-1  | 2023-12-27T04:08:07.396Z block-manager: block 1004 begin
+   demo-agd-1  | 2023-12-27T04:08:07.398Z block-manager: block 1004 commit
+   ```
+
+5. **For GitHub Codespaces Users:**  
+   - Go to the `PORTS` section in the bottom-right panel.
+   - Make all listed ports **public** by right-clicking and selecting `Port Visibility`.
+
+6. Deploy the smart contract:
+   ```bash
+   yarn start:contract
+   ```
+
+7. Start the user interface:
+   ```bash
+   yarn start:ui
+   ```
+   Use the provided URL in the terminal to access the chatbot in your browser.
+
+---
+
+## **Usage**
+
+1. **Buy Assets:**
+   - Interact with the chatbot to browse available assets.
+   - Select the assets you wish to purchase.
+   - Confirm the transaction to finalize the trade.
+
+2. **Sell Assets:**
+   - Provide details about the asset you wish to sell.
+   - The chatbot will list the asset in the marketplace.
+   - Confirm the transaction to list your asset.
+
+---
+
+## **Testing**
+
+### Unit Tests:
+Run the following command to execute unit tests:
+```bash
+yarn test
 ```
-demo-agd-1  | 2023-12-27T04:08:06.384Z block-manager: block 1003 begin
-demo-agd-1  | 2023-12-27T04:08:06.386Z block-manager: block 1003 commit
-demo-agd-1  | 2023-12-27T04:08:07.396Z block-manager: block 1004 begin
-demo-agd-1  | 2023-12-27T04:08:07.398Z block-manager: block 1004 commit
-demo-agd-1  | 2023-12-27T04:08:08.405Z block-manager: block 1005 begin
-demo-agd-1  | 2023-12-27T04:08:08.407Z block-manager: block 1005 commit
+
+### End-to-End (E2E) Tests:
+To run E2E tests in Chrome (recommended browser):
+```bash
+yarn test:e2e --browser chrome
 ```
-- **Only if you are running this in a github codespace:** go to `PORTS` in bottom-right panel, and make all listed ports `public` by selecting `Port Visibility` after right-click.
-- run `yarn start:contract` to start the smart contract. 
-- run `yarn start:ui` to start the smart contract. You can use the link in the output to load the smart contract UI in a browser.
 
-For any troubleshooting please refer to the detailed tutorial at [Here](https://docs.agoric.com/guides/getting-started/).
+---
 
-## Testing
+## **Contributing**
 
-To run the unit test:
-- run `yarn test` to run the unit tests
+We welcome contributions to improve Agoric Asset Chatbot. Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contribute.
 
-To run the end to end test:
-- run `yarn test:e2e --browser chrome` to run the end to end tests; you may replace `chrome` with your favorite browser name. Although `chrome` is the recommended browser to run end to end tests at this point.
+---
 
+## **Troubleshooting**
 
-## Contributing
+For troubleshooting and detailed setup instructions, refer to the [Agoric Getting Started Guide](https://docs.agoric.com/guides/getting-started/).
 
-See [CONTRIBUTING](./CONTRIBUTING.md) for more on contributing to this repo.
+---
+
+## **License**
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
